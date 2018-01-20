@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>event</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item no-lines *ngFor="let n of cards" class="ItemSpace">
+    <ion-fab right top>
+      <button ion-button round small class="card-contact">{{n.nContact}}</button>
+    </ion-fab>
+    <ion-card (click)="addEvent(n.title)" >
+     <img src={{n.img}}/>
+     <div class="card-title">{{n.title}}</div>
+     <div class="card-subtitle">{{n.listing}}</div>
+    </ion-card>
+  </ion-item>
+  <button ion-button [ngStyle]="{'background-color': buttonColor}">{{buttonText}}</button>
+</ion-content>
