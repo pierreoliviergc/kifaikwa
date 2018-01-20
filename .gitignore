@@ -6,6 +6,7 @@
 *.tmp.*
 log.txt
 
+package-lock.json
 .idea/
 .sourcemaps/
 .vscode/
@@ -17,6 +18,7 @@ node_modules/
 tmp/
 temp/
 $RECYCLE.BIN/
+www/
 
 .DS_Store
 Thumbs.db
