@@ -16,8 +16,6 @@ import { DetailEventPage} from '../detail-event/detail-event';
 })
 export class EventPage {
 
-  buttonColor : string = '#000';
-  buttonText : string = 'coucou';
 
  public cards = [
    {
@@ -55,20 +53,12 @@ export class EventPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  addEvent(title) {
-    console.log(title);
-    if (this.buttonColor === '#aaa')
-      this.buttonColor = '#000';
-    else
-      this.buttonColor = '#aaa';
-
-    this.buttonText = title;
-
-    this.navCtrl.push(DetailEventPage);
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventPage');
+  }
+
+  addEvent() {
+    this.navCtrl.push(DetailEventPage);
   }
 
 }

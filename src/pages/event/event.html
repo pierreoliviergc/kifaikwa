@@ -8,7 +8,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-item no-lines *ngFor="let n of cards" class="ItemSpace">
     <ion-fab right top>
       <button ion-button round small class="card-contact">{{n.nContact}}</button>
@@ -19,5 +19,4 @@
      <div class="card-subtitle">{{n.listing}}</div>
     </ion-card>
   </ion-item>
-  <button ion-button [ngStyle]="{'background-color': buttonColor}">{{buttonText}}</button>
 </ion-content>
