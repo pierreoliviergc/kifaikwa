@@ -44,7 +44,7 @@ export class MapPage {
           lng: -122.0809802
         },
         zoom: 18,
-        tilt: 30,
+        tilt: 0,
       },
     };
 
