@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {
  GoogleMaps,
  GoogleMap,
@@ -26,7 +26,7 @@ export class MapPage {
 
   map: GoogleMap;
   mapElement: HTMLElement;
-  constructor(public navCtrl: NavController, private googleMaps: GoogleMaps) {
+  constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, public alertCtrl: AlertController) {
 
   }
   ionViewDidLoad() {
@@ -48,7 +48,7 @@ export class MapPage {
       },
     };
 
-    
+
     this.map = GoogleMaps.create('map', mapOptions);
     this.map.setMapTypeId('MAP_TYPE_ROADMAP');
 
@@ -75,6 +75,52 @@ export class MapPage {
           });
 
       });
+  }
+
+  sharePosition()
+  {
+
+      this.showCheckbox();
+
+  }
+
+  showCheckbox() {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Partager la position avec');
+
+    alert.addInput({
+      type: 'checkbox',
+      label: 'Aladin Dorine',
+      value: 'value1',
+      checked: true
+    });
+
+    alert.addInput({
+      type: 'checkbox',
+      label: 'Papi poulette',
+      value: 'value2'
+    });
+    alert.addInput({
+      type: 'checkbox',
+      label: 'Sandra Isabelle',
+      value: 'value2'
+    });
+    alert.addInput({
+      type: 'checkbox',
+      label: 'Pierre Olivier',
+      value: 'value2'
+    });
+
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'Okay',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.testCheckboxOpen = false;
+        this.testCheckboxResult = data;
+      }
+    });
+    alert.present();
   }
 
 }
