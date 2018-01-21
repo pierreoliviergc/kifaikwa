@@ -6,17 +6,53 @@
 
 <ion-content padding>
   <ion-scroll scrollX="true" direction="x">
-    <ion-card (click)="addEvent(n.title)" *ngFor="let item of cards">
-       <img class="fit-thumbnail" src={{item.img}}/>
-       <ion-card-header text-wrap  class="card-title">{{item.title}}</ion-card-header>
-       <div class="card-subtitle">{{item.listing}}</div>
+    <ion-card (click)="addEvent(n.title)" *ngFor="let detail of eventDetails">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src={{detail.img}}>
+        </ion-avatar>
+        <h2>{{detail.artiste}}</h2>
+        <p>N{{detail.date}}</p>
+      </ion-item>
+
+      <img src={{detail.img}}>
+
+      <ion-card-content>
+        <p>{{detail.description}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button round outline (click)=buttonClicked(detail)>
+            <ion-icon name={{detail.status}}></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
     </ion-card>
   </ion-scroll>
   <ion-scroll scrollX="true" direction="x">
-    <ion-card (click)="addEvent(n.title)" *ngFor="let item of cards">
-       <img class="fit-thumbnail" src={{item.img}}/>
-       <div class="card-title">{{item.title}}</div>
-       <div class="card-subtitle">{{item.listing}}</div>
+    <ion-card (click)="addEvent(n.title)" *ngFor="let detail of eventDetails">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src={{detail.img}}>
+        </ion-avatar>
+        <h2>{{detail.artiste}}</h2>
+        <p>N{{detail.date}}</p>
+      </ion-item>
+
+      <img src={{detail.img}}>
+
+      <ion-card-content>
+        <p>{{detail.description}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button round outline (click)=buttonClicked(detail)>
+            <ion-icon name={{detail.status}}></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
     </ion-card>
   </ion-scroll>
 </ion-content>

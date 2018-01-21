@@ -48,10 +48,10 @@ export class MapPage {
     let mapOptions: GoogleMapOptions = {
       camera: {
         target: {
-          lat: 37.4241904,
-          lng: -122.0809802
+          lat: 0,
+          lng: 0,
         },
-        zoom: 18,
+        zoom: 15,
         tilt: 0,
       },
     };
@@ -80,12 +80,6 @@ export class MapPage {
               lng: this.myPosition.lng,
             }
           })
-          .then(marker => {
-            marker.on(GoogleMapsEvent.MARKER_CLICK)
-            .subscribe(() => {
-              alert('clicked');
-            });
-          });
         })
 
 
