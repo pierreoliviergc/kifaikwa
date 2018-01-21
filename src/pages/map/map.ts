@@ -115,9 +115,6 @@ export class MapPage {
     alert.addButton({
       text: 'Okay',
       handler: data => {
-        console.log('Checkbox data:', data);
-        this.testCheckboxOpen = false;
-        this.testCheckboxResult = data;
       }
     });
     alert.present();
