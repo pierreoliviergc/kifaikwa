@@ -26,6 +26,10 @@ export class MapPage {
 
   map: GoogleMap;
   mapElement: HTMLElement;
+
+  private testCheckboxOpen = true;
+  private testCheckboxResult = {};
+
   constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, public alertCtrl: AlertController) {
 
   }
