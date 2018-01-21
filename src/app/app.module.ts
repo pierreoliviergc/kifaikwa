@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { EventPage } from '../pages/event/event';
 import { MapPage } from '../pages/map/map';
+import { DetailEventPage} from '../pages/detail-event/detail-event';
 
 import { EventPageModule } from '../pages/event/event.module'
 import { MapPageModule } from '../pages/map/map.module'
@@ -25,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
+    DetailEventPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     EventPage,
-    MapPage
+    MapPage,
+    DetailEventPage
   ],
   providers: [
     StatusBar,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-//import { mobiscroll } from './app.module';
+import { DetailEventPage} from '../detail-event/detail-event';
 
 /**
  * Generated class for the EventPage page.
@@ -55,19 +55,17 @@ export class EventPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  addEvent(title) {
+    console.log(title);
+    if (this.buttonColor === '#aaa')
+      this.buttonColor = '#000';
+    else
+      this.buttonColor = '#aaa';
 
+    this.buttonText = title;
 
-    addEvent(title) {
-      console.log(title);
-      if (this.buttonColor === '#aaa')
-        this.buttonColor = '#000';
-      else
-        this.buttonColor = '#aaa';
-
-      this.buttonText = title;
-
-      this.navCtrl.push(EventPage);
-    }
+    this.navCtrl.push(DetailEventPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventPage');
