@@ -12,8 +12,9 @@ import { EventPage } from '../pages/event/event';
 import { MapPage } from '../pages/map/map';
 import { DetailEventPage} from '../pages/detail-event/detail-event';
 
-import { EventPageModule } from '../pages/event/event.module'
-import { MapPageModule } from '../pages/map/map.module'
+import { EventPageModule } from '../pages/event/event.module';
+import { MapPageModule } from '../pages/map/map.module';
+import { DetailEventPageModule } from '../pages/detail-event/detail-event.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,13 +26,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    DetailEventPage
+    TabsPage
   ],
   imports: [
     BrowserModule,
     EventPageModule,
     MapPageModule,
+    DetailEventPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

@@ -44,11 +44,11 @@ export class MapPage {
           lng: -122.0809802
         },
         zoom: 18,
-        tilt: 30,
+        tilt: 0,
       },
     };
 
-    
+
     this.map = GoogleMaps.create('map', mapOptions);
     this.map.setMapTypeId('MAP_TYPE_ROADMAP');
 

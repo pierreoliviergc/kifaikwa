@@ -5,4 +5,18 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-scroll scrollX="true" direction="x">
+    <ion-card (click)="addEvent(n.title)" *ngFor="let item of cards">
+       <img class="fit-thumbnail" src={{item.img}}/>
+       <ion-card-header text-wrap  class="card-title">{{item.title}}</ion-card-header>
+       <div class="card-subtitle">{{item.listing}}</div>
+    </ion-card>
+  </ion-scroll>
+  <ion-scroll scrollX="true" direction="x">
+    <ion-card (click)="addEvent(n.title)" *ngFor="let item of cards">
+       <img class="fit-thumbnail" src={{item.img}}/>
+       <div class="card-title">{{item.title}}</div>
+       <div class="card-subtitle">{{item.listing}}</div>
+    </ion-card>
+  </ion-scroll>
 </ion-content>
