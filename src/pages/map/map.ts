@@ -29,6 +29,10 @@ export class MapPage {
 
   private testCheckboxOpen = true;
   private testCheckboxResult = {};
+  private myPosition = {
+    lat: null,
+    lng: null,
+ };
 
   constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, public alertCtrl: AlertController) {
 
@@ -62,21 +66,29 @@ export class MapPage {
         console.log('Map is ready!');
 
         // Now you can use all methods safely.
-        this.map.addMarker({
+
+        this.map.getMyLocation().then((resp)=>{
+          this.myPosition = resp.latLng;
+          console.log(this.myPosition);
+          this.map.setCameraTarget(this.myPosition);
+          this.map.addMarker({
             title: 'Ionic',
             icon: 'blue',
             animation: 'DROP',
             position: {
-              lat: 37.4241904,
-              lng: -122.0809802
+              lat: this.myPosition.lat,
+              lng: this.myPosition.lng,
             }
           })
           .then(marker => {
             marker.on(GoogleMapsEvent.MARKER_CLICK)
-              .subscribe(() => {
-                alert('clicked');
-              });
+            .subscribe(() => {
+              alert('clicked');
+            });
           });
+        })
+
+
 
       });
   }
